@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include<conio.h>
+
+int main() {
+    int arr[2][3];
+    int i, j;
+    int rowGreatest, rowSmallest, colGreatest, colSmallest;
+    int overallGreatest, overallSmallest;
+
+   clrscr ( );
+    printf("Enter elements for 2x3 array:\n");
+    for(i = 0; i < 2; i++) {
+        for(j = 0; j < 3; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    
+    overallGreatest = overallSmallest = arr[0][0];
+
+    
+    for(i = 0; i < 2; i++) {
+        rowGreatest = rowSmallest = arr[i][0];
+        for(j = 0; j < 3; j++) {
+            if(arr[i][j] > rowGreatest) rowGreatest = arr[i][j];
+            if(arr[i][j] < rowSmallest) rowSmallest = arr[i][j];
+
+            
+            if(arr[i][j] > overallGreatest) overallGreatest = arr[i][j];
+            if(arr[i][j] < overallSmallest) overallSmallest = arr[i][j];
+        }
+        printf("Row %d -> Greatest: %d, Smallest: %d\n", i+1, rowGreatest, rowSmallest);
+    }
+
+   
+    for(j = 0; j < 3; j++) {
+        colGreatest = colSmallest = arr[0][j];
+        for(i = 0; i < 2; i++) {
+            if(arr[i][j] > colGreatest) colGreatest = arr[i][j];
+            if(arr[i][j] < colSmallest) colSmallest = arr[i][j];
+        }
+        printf("Column %d -> Greatest: %d, Smallest: %d\n", j+1, colGreatest, colSmallest);
+    }
+
+    
+    printf("Overall Greatest: %d\n", overallGreatest);
+    printf("Overall Smallest: %d\n", overallSmallest);
+
+   getch ( );
+ return 0;
+}
