@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include<conio.h>
+
+int square(int n) {
+    return n * n;
+}
+
+int cube(int n) {
+    return n * n * n;
+}
+
+int main() {
+    int num;
+    int (*func_ptr)(int);
+clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    func_ptr = square;
+    printf("Square: %d\n", func_ptr(num));
+
+    func_ptr = cube;
+    printf("Cube: %d\n", func_ptr(num));
+
+  getch;
+  return 0;
+}
