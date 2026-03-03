@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include<conio.h>
+
+struct Student {
+    int roll_no;
+    char name[50];
+    int marks;
+};
+
+void main() {
+    struct Student s;
+    struct Student *ptr = &s;
+clrscr();
+
+    printf("Enter Roll No:\n ");
+    scanf("%d", &ptr->roll_no);
+
+    printf("Enter Name:\n ");
+    scanf("%s", &ptr->name);
+
+    printf("Enter Marks:\n ");
+    scanf("%d", &ptr->marks);
+
+ 
+    printf("\nStudent Details:\n");
+    printf("Roll No: %d\n", ptr->roll_no);
+    printf("Name: %s\n", ptr->name);
+    printf("Marks: %d\n", ptr->marks);
+
+   
+    printf("\nEnter new marks: ");
+    scanf("%d", &ptr->marks);
+
+   
+    printf("\nUpdated Details:\n");
+    printf("Roll No: %d\n", ptr->roll_no);
+    printf("Name: %s\n", ptr->name);
+    printf("Marks: %d\n", ptr->marks);
+
+   getch();
+}
